@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+        integrity="undefined" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    <title>Revive Raffle</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Revive Raffle</h1>
+        <br>
+        <div id="convert">
+            <h3><em>Start here.</em></h3>
+            <p>1. In the Shared Google Sheet, "Freeze" the sheet using the spreadsheet controls.</p>
+            <ul>View > Freeze > 1 Row</ul>
+            <p>2. Then, next to the "Help" option for the spreadsheet controls- select "Export JSON". </p>
+            <ul><a href="http://blog.pamelafox.org/2013/06/exporting-google-spreadsheet-as-json.html">not there?</a></ul>
+            <ul>Select "Export JSON for this sheet".</ul>
+            <p>3. Copy the JSON and paste it below. 👇</p>
+            <br>
+            <input type="text" id="json-text" placeholder="paste JSON here">
+            <button id="convert-button">Convert to raffle</button>
+            <hr class="divider">
+        </div>
+        <!-- next section -->
+        <div id="raffle">
+            <details>
+                <summary><strong>Remaining Entries:</strong> <em>(click to expand)</em></summary>
+                <p id="remaining">[players go here]</p>
+            </details>
+            <br>
+            <!-- Timed -->
+            <h3>Timed:</h3>
+            <em>select how often a raffle pick will automatically occur.</em>
+            <br>
+            <input type="number" min="0" id="requested-time">
+            <button id="start-button">Start</button>
+            <button id="stop-button">Stop</button>
+            <br>
+            <input type="radio"name="time" value="hours">
+            <label for="hours">hours</label>
+            <input type="radio" name="time" value="minutes" checked>
+            <label for="minutes">minutes</label>
+            <input type="radio" name="time" value="seconds">
+            <label for="seconds">seconds</label>
+            <br><br>
+            <!-- Manual -->
+            <h3>Manual:</h3>
+            <em>Manually pick one name- one at a time.</em>
+            <br><br>
+            <button id="pick-button">Pick</button>
+            <br><br>
+            <h1 id="picked-player"><em></em></h1>
+
+        </div>
+    </div>
+</body>
+
+</html>

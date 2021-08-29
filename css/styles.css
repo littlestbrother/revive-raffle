@@ -1,0 +1,10 @@
+.divider{
+    border-top: 3px dashed #bbb;
+}
+
+div#raffle{
+    display: none;
+}
+div#result{
+    display: none;
+}
